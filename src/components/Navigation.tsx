@@ -19,17 +19,17 @@ const Navigation = () => {
         <div className="flex justify-between items-center py-6">
           <Link 
             href="/" 
-            className="text-base font-normal hover:opacity-70 transition-opacity"
+            className="nav-logo hover:opacity-70 transition-opacity"
           >
-            Sung Kim
+            SUNG KIM
           </Link>
           
-          <ul className="flex space-x-8">
+          <ul className="nav-menu">
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`text-sm font-normal transition-colors hover:opacity-70 ${
+                  className={`nav-item transition-colors hover:opacity-70 ${
                     pathname === item.href 
                       ? 'text-black' 
                       : 'text-black'
