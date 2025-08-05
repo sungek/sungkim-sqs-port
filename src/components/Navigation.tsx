@@ -15,21 +15,21 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white z-50">
-      <div className="max-w-6xl mx-auto px-6 py-6">
-        <div className="flex justify-between items-center">
+      <div className="container">
+        <div className="flex justify-between items-center py-6">
           <Link 
             href="/" 
-            className="text-lg font-bold tracking-tight hover:opacity-70 transition-opacity"
+            className="text-base font-normal hover:opacity-70 transition-opacity"
           >
-            SUNG KIM
+            Sung Kim
           </Link>
           
-          <ul className="flex space-x-10">
+          <ul className="flex space-x-8">
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`text-sm font-normal tracking-wide transition-colors hover:opacity-70 ${
+                  className={`text-sm font-normal transition-colors hover:opacity-70 ${
                     pathname === item.href 
                       ? 'text-black' 
                       : 'text-black'
