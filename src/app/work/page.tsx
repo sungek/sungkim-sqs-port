@@ -79,20 +79,20 @@ export default function WorkPage() {
   return (
     <div className="py-16">
       <div className="container">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-light tracking-tight text-gray-900 mb-4">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-light tracking-tight text-black mb-8">
             Select Client Work.
           </h1>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <Link
               key={project.id}
               href={`/work/${project.id}`}
-              className="group block bg-white border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105"
+              className="group block bg-white overflow-hidden transition-all duration-300 hover:opacity-75"
             >
-              <div className="aspect-square bg-gray-100 relative overflow-hidden">
+              <div className="aspect-square bg-gray-100 relative overflow-hidden mb-4">
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
                   <div className="text-center text-gray-500">
                     <div className="text-4xl mb-2">📸</div>
@@ -101,8 +101,8 @@ export default function WorkPage() {
                 </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1 group-hover:text-gray-600 transition-colors">
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-black mb-1">
                   {project.title}
                 </h3>
                 <p className="text-gray-600 text-sm">
