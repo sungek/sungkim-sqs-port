@@ -1,77 +1,78 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const projects = [
   {
     id: 'michelin',
     title: 'Michelin',
     subtitle: 'Social AOR',
-    image: '/projects/michelin-thumb.jpg',
+    image: '/images/work-thumbnails/michelin.png',
   },
   {
     id: 'nutella',
     title: 'Nutella',
     subtitle: 'Social AOR',
-    image: '/projects/nutella-thumb.jpg',
+    image: '/images/work-thumbnails/nutella.jpeg',
   },
   {
     id: 'ferrari-california-t',
     title: 'Ferrari',
     subtitle: 'California T Campaign',
-    image: '/projects/ferrari-california-thumb.jpg',
+    image: '/images/work-thumbnails/ferrari-california-t.jpeg',
   },
   {
     id: 'godiva',
     title: 'Godiva',
     subtitle: 'Holiday Campaign',
-    image: '/projects/godiva-thumb.jpg',
+    image: '/images/work-thumbnails/godiva.jpeg',
   },
   {
     id: 'bfgoodrich-tires',
     title: 'BFGoodrich Tires',
     subtitle: 'Social AOR',
-    image: '/projects/bfgoodrich-thumb.jpg',
+    image: '/images/work-thumbnails/bfgoodrich-tires.jpeg',
   },
   {
     id: 'oracle',
     title: 'Oracle',
     subtitle: 'Social AOR',
-    image: '/projects/oracle-thumb.jpg',
+    image: '/images/work-thumbnails/oracle.png',
   },
   {
     id: 'ferrari-ferrari-does-it-again',
     title: 'Ferrari',
     subtitle: 'Ferrari Does It Again Campaign',
-    image: '/projects/ferrari-again-thumb.jpg',
+    image: '/images/work-thumbnails/ferrari-ferrari-does-it-again.jpeg',
   },
   {
     id: 'hugo-boss',
     title: 'Hugo Boss',
     subtitle: 'Global AOR',
-    image: '/projects/hugo-boss-thumb.jpg',
+    image: '/images/work-thumbnails/hugo-boss.png',
   },
   {
     id: 'scania',
     title: 'Scania',
     subtitle: 'Next Generation Scania Campaign',
-    image: '/projects/scania-thumb.jpg',
+    image: '/images/work-thumbnails/scania.jpeg',
   },
   {
     id: 'mcdonalds',
     title: 'McDonald\'s',
     subtitle: 'Food Vision Campaign',
-    image: '/projects/mcdonalds-thumb.jpg',
+    image: '/images/work-thumbnails/mcdonalds.jpeg',
   },
   {
     id: 'ferrari-458-moments',
     title: 'Ferrari',
     subtitle: '458 Moments Campaign',
-    image: '/projects/ferrari-458-thumb.jpg',
+    image: '/images/work-thumbnails/ferrari-458-moments.png',
   },
   {
     id: 'vaseline',
     title: 'Unilever Vaseline',
     subtitle: 'Global Brand Governance & Strategy',
-    image: '/projects/vaseline-thumb.jpg',
+    image: '/images/work-thumbnails/vaseline.png',
   },
 ];
 
@@ -93,12 +94,13 @@ export default function WorkPage() {
               className="group block bg-white overflow-hidden transition-all duration-300 hover:opacity-75"
             >
               <div className="aspect-square bg-gray-100 relative overflow-hidden mb-4">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="text-4xl mb-2">📸</div>
-                    <div className="text-sm font-medium">{project.title}</div>
-                  </div>
-                </div>
+                <Image
+                  src={project.image}
+                  alt={`${project.title} - ${project.subtitle}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
               </div>
               
               <div className="text-center">

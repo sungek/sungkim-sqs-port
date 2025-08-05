@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function MichelinProject() {
   return (
@@ -34,12 +35,14 @@ export default function MichelinProject() {
           
           {/* Project image */}
           <div className="mb-16">
-            <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-400 rounded-lg flex items-center justify-center">
-              <div className="text-center text-gray-600">
-                <div className="text-6xl mb-4">🚗</div>
-                <div className="text-xl font-medium">Michelin Campaign Visual</div>
-                <div className="text-sm">High-quality campaign imagery would be displayed here</div>
-              </div>
+            <div className="aspect-video bg-gray-100 relative overflow-hidden rounded-lg">
+              <Image
+                src="/images/projects/michelin/Z4.jpg"
+                alt="Michelin Social AOR Campaign"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 80vw"
+              />
             </div>
           </div>
           
