@@ -12,7 +12,7 @@ html {
 
 body {
   background: #ffffff;
-  color: #171717;
+  color: #1a1a1a;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -102,14 +102,39 @@ main {
 
 .nav-logo {
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1rem;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
 }
 
 .nav-item {
   text-transform: uppercase;
   font-size: 0.875rem;
-  font-weight: normal;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
 }
 
 /* Layout utilities */
@@ -191,10 +216,23 @@ main {
 .text-2xl { font-size: 1.5rem; line-height: 2rem; }
 .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
 .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-.text-5xl { font-size: 3rem; line-height: 1; }
-.text-6xl { font-size: 3.75rem; line-height: 1; }
-.text-7xl { font-size: 4.5rem; line-height: 1; }
-.text-8xl { font-size: 6rem; line-height: 1; }
+.text-5xl { font-size: 3rem; line-height: 1.1; }
+.text-6xl { font-size: 3.75rem; line-height: 1.1; }
+.text-7xl { font-size: 4.5rem; line-height: 1.1; }
+.text-8xl { font-size: 6rem; line-height: 1.1; }
+
+/* Enhanced typography */
+.heading-primary {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.heading-secondary {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
 
 /* Spacing utilities */
 .space-y-3 > * + * { margin-top: 0.75rem; }
@@ -249,4 +287,76 @@ main {
 
 @media (min-width: 1280px) {
   .xl\\:text-8xl { font-size: 6rem; line-height: 1; }
+}
+
+/* Enhanced portfolio styles */
+.portfolio-item {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Enhanced grid spacing */
+.portfolio-grid {
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .portfolio-grid {
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    gap: 3rem;
+  }
+}
+
+/* Staggered animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in-up:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-up:nth-child(2) { animation-delay: 0.2s; }
+.fade-in-up:nth-child(3) { animation-delay: 0.3s; }
+.fade-in-up:nth-child(4) { animation-delay: 0.4s; }
+.fade-in-up:nth-child(5) { animation-delay: 0.5s; }
+.fade-in-up:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -6,7 +6,7 @@ export default function Home() {
       <div className="container">
         <div className="max-w-4xl mx-auto text-center space-y-12">
           <div className="space-y-8">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight text-black">
+            <h1 className="heading-primary text-black">
               Hello. I&apos;m Sung.
             </h1>
             

@@ -86,14 +86,14 @@ export default function WorkPage() {
           </h1>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
+        <div className="portfolio-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
             <Link
               key={project.id}
               href={`/work/${project.id}`}
-              className="group block bg-white overflow-hidden transition-all duration-300 hover:opacity-75"
+              className={`portfolio-item fade-in-up block bg-white`}
             >
-              <div className="aspect-square bg-gray-100 relative overflow-hidden mb-4">
+              <div className="aspect-square bg-gray-100 relative overflow-hidden">
                 <Image
                   src={project.image}
                   alt={`${project.title} - ${project.subtitle}`}
@@ -101,10 +101,16 @@ export default function WorkPage() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+                <div className="portfolio-overlay">
+                  <div className="text-center">
+                    <div className="text-sm font-medium mb-1">View Project</div>
+                    <div className="text-xs opacity-80">{project.subtitle}</div>
+                  </div>
+                </div>
               </div>
               
-              <div className="text-center">
-                <h3 className="text-lg font-bold text-black mb-1">
+              <div className="p-6 text-center">
+                <h3 className="text-lg font-semibold text-black mb-1 heading-secondary">
                   {project.title}
                 </h3>
                 <p className="text-gray-600 text-sm">
